@@ -1,0 +1,69 @@
+<h2 class="text-center Abhaya title"><i class="fa fa-fire"></i> Ajouter un smoothie au catalogue</h2>
+
+<form class="generic-form" action="<?= $requestUrl ?>/admin/meal" method="POST" enctype="multipart/form-data">
+
+    <aside class="error-message hidden">
+        <h3><i class="fa fa-warning"></i> Il y a <span id="js-total-error-count">1</span> erreur(s) dans le formulaire !</h3>
+        <p></p>
+    </aside>
+
+    <fieldset class="shadow p-3 mb-5 bg-white rounded">
+        <ul>
+            <li>
+                <label for="name">Nom :</label>
+                <input id="name" class="formulaireAdmin" type="text" name="name" required data-name="Nom">
+            </li>
+            <li>
+                <label class="textarea" for="description">Description :</label>
+                <textarea id="description" class="formulaireAdmin" name="description" rows="3" required></textarea>
+            </li>
+            <li>
+                <label for="photo" >Photo :</label>
+                <input id="photo" name="photo" type="file">
+            </li>
+            <li><i class="fa fa-warning"></i> Merci de renommer le fichier de la photo avec le nom de l'aliment <strong>avant</strong> de l'envoyer</li>
+            <li>
+                <label for="salePrice" >Prix de vente :</label>
+                <input id="salePrice" class="formulaireAdmin" class="money" type="text" maxlength="5" name="salePrice" data-name="Prix de vente" required>
+                <label for="salePrice" class="no-width">€</label>
+            </li>
+
+        </ul>
+    </fieldset>
+
+    <ul>
+        <li>
+            <input class="button button-primary" type="submit" value="Ajouter">
+            <a class="button button-cancel small" href="<?= $requestUrl ?>/admin/meal">Annuler</a>
+        </li>
+    </ul>
+</form>
+<form id="formMealCheck" class="generic-form" action="<?= $requestUrl ?>/admin/meal" method="POST" enctype="multipart/form-data">
+    <fieldset class="shadow p-3 mb-5 bg-white rounded">
+        <h2 class="text-center Abhaya title"><i class="fa far fa-trash-alt"></i> Retirer un smoothie du catalogue</h2>
+        <table class="generic-table meal-list">
+            <tbody>
+                <?php foreach($meals as $meal): ?>
+                    <tr>
+                        <td>
+                            <strong><?= $meal['Name']; ?></strong>
+                        </td>
+                        <td class="number"><strong><?= number_format($meal['SalePrice'], 2) ?></strong> €</td>
+                        <td>
+                            <input type="checkbox" class="products" value="<?= $meal['Id']; ?>">
+                        </td>
+
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </fieldset>
+    </table>
+    <ul>
+        <li>
+            <input id="boutonSupprimer" class="button button-primary" type="submit" value="Supprimer">
+            <a class="button button-cancel small" href="<?= $requestUrl ?>/admin/meal">Annuler</a>
+        </li>
+    </ul>
+</form>
+
+<script type="text/javascript" src="<?= $wwwUrl ?>/js/layout.js"></script>

@@ -1,0 +1,140 @@
+/*
+ * Styles des éléments HTML
+ */
+*
+{
+    box-sizing: border-box;
+}
+
+li{
+    list-style:none;
+}
+
+header{
+	width: 100%;
+	height: 200px;
+	background: linear-gradient(180deg, #FFFFFF 0%, rgba(7, 118, 133, 0.48) 0%, rgba(255, 255, 255, 0.984375) 100%), rgba(0, 163, 255, 0.67);
+}
+
+nav{
+	width: 100%;
+}
+
+footer{
+	width: 100%;
+	height: 200px;
+	background: linear-gradient(to top, #FFFFFF 0%, rgba(7, 118, 133, 0.48) 0%, rgba(255, 255, 255, 0.984375) 100%), rgba(0, 163, 255, 0.67);
+
+}
+
+.nav-item{
+	font-family: 'Abhaya Libre', serif;
+}
+
+#pfoot{
+	font-family: 'Abhaya Libre', serif;
+}
+
+#logo{
+	    margin: 20px 0 40px 80px;
+}
+
+/* PAGE LoginView */
+.seConnecter{
+    margin-left:auto;
+    margin-right:auto;
+}
+#buttonCreer{
+    margin-top:10%;
+    
+    color:white;
+    background: #FD5182;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    line-height: 1.5em;
+    text-decoration: none;
+    transition: background-color 0.25s, box-shadow 0.25s;
+}
+.buttonCreer{
+    margin-left:auto;
+    margin-right:auto;
+}
+.buttonCreer li{
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+}
+.authentification{
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+
+}
+.userInfos{
+    margin-top:5%;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+    box-shadow: 5px 5px 12px #aaa;
+}
+.userInfos p{
+    margin-left:auto;
+    margin-right:auto;
+}
+.userInfos h2{
+    color:#FD5182;
+    margin-top:5%;
+}
+.userInfos ul li label{
+    color:#FD5182;
+}
+.userInfos ul li input{
+    border:1px solid #FD5182 !important;
+    border-radius:25px;
+}
+.userInfos ul li textarea{
+    border:1px solid #FD5182 !important;
+    border-radius:25px;
+}
+.generic-form ul{
+    margin-left:auto;
+    margin-right:auto;
+}
+#buttonConnexion{
+    margin-top:10%;
+    color:white;
+    background: #FD5182;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    line-height: 1.5em;
+    text-decoration: none;
+    transition: background-color 0.25s, box-shadow 0.25s;
+}
+
+#photoLogIn{
+    width:600px;
+    margin-bottom:5%;
+}
+.hidden{
+    display:none;
+}
+
+
+/* PAGE Creer compte */
+
+
+#titreCreer{
+    text-align:center;
+    margin-top:5%;
+    margin-bottom:5%;
+}
+.titreIdentite{
+    margin-left:5%;
+    color:#FD5182;
+}
+

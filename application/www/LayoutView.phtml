@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width" />
+    <title>Smoothie Maker</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Abhaya+Libre:800|Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/font-awesome-4.3.0.min.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps|Karla">
+
+    
+
+    <!-- Feuilles de styles de l'application -->
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/ui-button.css">
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/ui-form.css">
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/ui-table.css">
+
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/bootstrap.min.css">
+     <link rel="stylesheet" href="<?= $wwwUrl ?>/css/theme.css">
+     <link rel="stylesheet" href="<?= $wwwUrl ?>/css/main.css">
+
+    <!-- Librairie jQuery -->
+    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <!-- JavaScript de l'application -->
+    <link src="<?= $wwwUrl ?>/css/bootstrap.min.js">
+    <script src="<?= $wwwUrl ?>/js/utilities.js"></script>
+    <script src="<?= $wwwUrl ?>/js/classes/FormValidator.class.js"></script>
+    <script src="<?= $wwwUrl ?>/js/classes/BasketSession.class.js"></script>
+</head>
+<body>
+
+    <!-- En-tête commune -->
+
+    <header>
+    <div class="container-fluid">
+        <div class="row">
+
+            <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+                <div class="col-3">
+                    <a href="<?= $requestUrl ?>">
+                        <img id= "logo" src="<?= $wwwUrl ?>/images/logoblanc.png" width="150px" alt="smoothmaker">
+                    </a>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse col-6 text-right" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                    <button type="button" class="close hide" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                        <a class="nav-item nav-link active Abhaya nav-size" href="<?= $requestUrl ?>">Accueil<span class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link active Abhaya nav-size" href="<?= $requestUrl ?>/produits">Smoothies</a>
+                        <a class="nav-item nav-link active Abhaya nav-size" href="<?= $requestUrl ?>/recette">Recettes</a>
+
+                        <?php if($userSession->getAdmin() == 1): ?>
+                            <a class="nav-item nav-link active Abhaya nav-size" href="<?= $requestUrl ?>/order">Commander</a>
+                        <?php elseif($userSession->isAuthenticated() == true): ?>
+                            <a class="nav-item nav-link active Abhaya nav-size" href="<?= $requestUrl ?>/order">Commander</a>
+                        <?php else: ?>
+                            <a class="nav-item nav-link active Abhaya nav-size" href="<?= $requestUrl ?>/order">Commander</a>
+                        <?php endif; ?>
+
+                        <a class="nav-item nav-link active Abhaya nav-size" href="<?= $requestUrl ?>/contact">Contact</a>
+                    </div>
+                </div>
+            </nav>
+            
+        </div>
+        <div class="row" id="btnUser">
+        <div class="text-right secondNav">
+            <?php if($userSession->getAdmin() == 1): ?>
+                <a class="nav-item nav-link active Abhaya nav-size bg-info btnNav d-inline" href="<?= $requestUrl ?>/admin">Administration</a>
+                <a class="nav-item nav-link active Abhaya nav-size bg-info btnNav d-inline" href="<?= $requestUrl ?>/admin/Meal">Produit</a>
+                <a class="nav-item nav-link active Abhaya nav-size bg-info btnNav d-inline" href="<?= $requestUrl ?>/user/logout">Déconnexion</a>
+            <?php elseif($userSession->isAuthenticated() == true): ?>
+                <a class="nav-item nav-link active Abhaya nav-size bg-info btnNav d-inline" href="<?= $requestUrl ?>/user/login/pageperso?id=<?=($userSession->getUserId()); ?>">Page Perso</a>
+                <a class="nav-item nav-link active Abhaya nav-size bg-info btnNav d-inline" href="<?= $requestUrl ?>/user/logout">Déconnexion</a>
+            <?php else: ?>
+                <a class="nav-item nav-link active Abhaya nav-size bg-info btnNav d-inline" href="<?= $requestUrl ?>/user">Créer un compte</a>
+                <a class="nav-item nav-link active Abhaya nav-size bg-info btnNav d-inline" href="<?= $requestUrl ?>/user/login">Connexion</a>
+            <?php endif; ?>
+        </div>
+        </div>
+
+       
+        
+    </header>
+    <!-- Interface utilisateur -->
+    <section class="user-interface">
+        <ul class="link-list">
+            <?php if($userSession->getAdmin() == 1): ?>
+                <li class="layout-right">
+                    <p class="welcome">Bonjour <strong><?= $userSession->getFullName() ?></strong> !</p>
+                    
+                </li>
+            <?php elseif($userSession->isAuthenticated() == true): ?>
+                <li class="layout-right">
+                    <p class="welcome">Bonjour <strong><?= $userSession->getFullName() ?></strong> !</p>
+                   
+                </li>
+            <?php else: ?>
+                <li class="layout-right">
+                    
+                </li>
+            <?php endif; ?>
+        </ul>
+    </section>
+    <main>
+        <!-- Affichage du template lié à la vue -->
+        <?php include $this->viewData['template']; ?> 
+    </main>
+
+    <!-- Pied de page commun -->
+
+    <div>
+    <footer>
+        <div class="container bg-transparent">
+            <div class="row">
+                <p class="text-light mx-auto textfoot Abhaya" id="pfoot">Partage ton smoothie sur les réseaux avec</p>
+                </div>
+                <div class="row">
+                <p class="text-light mx-auto textfoot1 Abhaya" id="pfoot">#smoothmaker</p>
+                </div>
+                <div class="row ">
+                <div class="mx-auto">
+                 <i class="fab fa-facebook-square text-light"></i>
+                 <i class="fab fa-instagram text-light"></i>
+                 </div>
+                 </div>
+                 <div class="row ">
+                 <p class="text-light mx-auto Abhaya" id="pfootsmall">2018 SmoothMaker Lyon - Mentions légales - Contact</p>
+                 </div>
+            </div>
+
+        </div>
+    </footer>
+    </div>
+
+    <!-- Code principal JavaScript de l'application -->
+    <script src="<?= $wwwUrl ?>/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+
+<div class="row">
+<form class="form-signin col-md-12 col-lg-6 mx-auto" method='post' id="formPagePerso" enctype="multipart/form-data">
+ <fieldset class="userInfos">
+     <div class="shadow p-3 mb-5 bg-white rounded col-8 mx-auto text-center">
+    <h2 class="Abhaya title">Coordonnées</h2>
+            <label for="nom" > Nom : &nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input type="nom" id="nom" class="formStyle"  name = "nom" value ="<?= $infos['LastName']; ?>" ><br />
+            <label for="prenom" >Prenom : </label>
+            <input type="prenom" class="formStyle"  id="prenom"  name = "prenom" placeholder="Votre prenom" value = "<?= $infos['FirstName']; ?>"><br />
+                   
+            <label for="adresse" >Votre adresse : </label>
+             <input type="text" class="formStyle"  id="adresse" name = "adresse"  value = "<?= $infos['Address']; ?>"><br/>
+
+             <label for="cp" >Ville : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+             <input type="text" class="formStyle"  id="cp" name = "cp" value = "<?= $infos['ZipCode']; ?>"><br />
+
+             <label for="city" > Code postal  :  </label>
+             <input type="text" class="formStyle"  id="city" name = "city" value = "<?= $infos['City']; ?>"><br />
+
+             <label for="phone" >Téléphone : </label>
+             <input type="text" class="formStyle"  id="phone" name = "phone" value = "<?= $infos['Phone']; ?>"><br />
+     </div>         
+    </fieldset>
+
+	<div class="col-4 mx-auto">			
+        <button type="submit" class="bouttonModifierPerso">Modifier</button>
+        <button type="cancel" class="bouttonAnnulerPerso">Annuler</button>
+    </div>	
+</form>
+</div>
+
+<div class="formPerso col-6 mx-auto">
+        <h2 class="Abhaya title pink text-center">Historique des commandes</h2>
+        <table id="table-order" class="mx-auto">
+	        	<thead>
+	        		<tr>
+	        			<th>Date de la commande</th>
+	        			<th>Total</th>
+	        		</tr>
+	        	</thead>
+
+        <?php foreach($commandes as $commande) : ?>
+            <tbody>
+            <tr>
+												
+						<td>
+							<?= $commande['CreationTimestamp'] ?>
+						</td>
+						
+						<td>
+							<?= $commande['TotalAmount'] ?> €
+						</td>
+			</tr>
+        
+        <?php endforeach; ?>
+        </tbody>
+        </table>
+
+</div>
+
+    <h2 class="Abhaya title pink text-center">Favoris</h2>
+
+<div class='row'>
+    <?php if($favoris == 0):?>
+            <p>Aucune recette en favoris</p>";
+<?php else:?>
+
+            <?php foreach($favoris as $favori):?>
+                
+                    <?php echo '<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 text-center"><p>'.$favori['Name'].'</p><img class="imgperso" src="'.$wwwUrl.'/images/'. $favori['Photo'].'"></div>';?>
+                
+<?php endforeach;
+    endif;
+?>
+</div>
+        
+    
+
+

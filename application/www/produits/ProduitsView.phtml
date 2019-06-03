@@ -1,0 +1,51 @@
+<div class="container-fluid ">
+        <div class="row ">
+            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+            <img id="imgTop" src="<?= $wwwUrl ?>/images/fafa4b665d_114351_smoothies-fruits-legumes-sante.jpg" class="imgAccueil" alt="photo_Smoothie">
+            </div>
+
+            <article class="jumbotron bg-transparent col-lg-7 col-md-12 col-sm-12 col-xs-12 text-center">
+                <div class="title Abhaya">NOS SMOOTHIES</div>
+                <p class="lead">Tous nos smoothies sont fait maison avec des produits bio et de saison. Nous favorisons au maximum les producteurs locaux afin de vous proposer des produits éco responsables, équitables, avec un impact positif pour votre santé et pour l'environnement.</p>
+                <p>Venez déguster nos smoothies</p>
+            </article>
+        </div>
+
+        <!-- Message de notification -->
+        <?php if($flashBag->hasMessages() == true): ?>
+            <aside id="notice" class="notice">
+                <?php foreach($flashBag->fetchMessages() as $message): ?>
+                    <p><?= $message ?></p>
+                <?php endforeach ?>
+            </aside>
+        <?php endif; ?>
+
+
+        <!-- Liste des produits alimentaires -->
+        <table class="generic-table meal-list">
+           
+            <div class="row text-center">
+                <?php foreach($meals as $meal): ?>
+                    <div id = "boxRecette" class="recette col-lg-3 col-md-6 col-sm-12 col-xs-12"> 
+                    <article id ="produit">
+                        <img id="imgRecette" src="<?= $wwwUrl ?>/images/<?= $meal['Photo']; ?>" alt="<?= $meal['Name']; ?>">
+                        <h3><?= $meal['Name']; ?></h3>
+                        <p><?= $meal['Description']; ?></p>
+                        <p class="number"><strong><?= number_format($meal['SalePrice'], 2) ?></strong> €</p>
+                    
+                        <button type="submit" class="panierTemp" data-id= "<?= $meal['Id']; ?>" data-name = "<?= $meal['Name']; ?>" data-quantity = '1' data-price = "<?= $meal['SalePrice'];?>">Ajouter au panier</button>
+                     
+                    </article>
+                    </div>
+                    
+                   
+                <?php endforeach; ?>
+            </div>
+        <div class="commander">
+            <a href="<?= $requestUrl ?>/order/">Commander</a>
+        </div>
+        </table>
+    
+</div>
+
+<script type="text/javascript" src="<?= $wwwUrl ?>/js/layout.js"></script>

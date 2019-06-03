@@ -1,0 +1,43 @@
+<!-- page qui affiche toutes les recettes -->
+
+<div class="container-fluid ">
+<div class="row ">
+		<div class="col-lg-4 col-md-12 col-sm-12  col-xs-12">
+		    <img src="<?= $wwwUrl ?>/images/fruits.jpg" class="imgAccueil" alt="entete-recette">
+		</div>
+
+		<div class="jumbotron col-lg-7 col-md-12 col-sm-12 col-xs-12 text-center bg-transparent">
+		    <h1 class="display-4 title Abhaya">NOS RECETTES</h1>
+		     <p class="lead">Des recettes simples, à réaliser chez vous. Petits-déjeuners, goûters, nos recettes originales raviront les plus petits comme les plus grands.
+		    Nos recettes sont faites avec des fruits bio, ce n'est pas indispensable mais nous vous le recommandons. Il est également préférable d'utiliser des fruits de saison.</p>
+		</div>
+
+
+
+		<!--Liste des recettes-->
+        <?php foreach($recettes as $recette): ?>
+        <div id = "boxRecette" class="recette col-lg-3 col-md-6 col-sm-12 col-xs-12">
+            <a href="<?= $requestUrl ?>/recette/recettedetails?id=<?=$recette['Id']; ?>">
+            
+            <img class="newImg" id="imgRecette" src="<?= $wwwUrl ?>/images/<?= $recette['Photo']; ?>" alt="<?= $recette['Name']; ?>">
+            
+            <div id="recetteName">
+            <h3 class="text-dark"><?= $recette['Name']; ?></h3></a>
+
+        <?php foreach($favoris as $favori): ?>
+
+            <?php $user_Id = $userSession->getUserId();
+            if($favori['Recette_Id'] == $recette['Id'] && $favori['User_Id'] == $user_Id) :?>
+            <a id="heart" href="#" ><img src="<?= $wwwUrl ?>/images/fullheart.png"></a>
+            <?php endif ;?>
+
+        <?php endforeach; ?>
+
+            </div>
+
+            </div>
+            <?php endforeach; ?>
+
+</div>
+
+<script type="text/javascript" src="<?= $wwwUrl ?>/js/layout.js"></script>

@@ -1,0 +1,70 @@
+<!-- page qui affiche le detail d'une recette -->
+
+<div class="container-fluid ">
+
+	<div class="row">
+			<div class="col-lg-4 col-md-6 col-sm-12">
+				<img src="<?= $wwwUrl ?>/images/<?= $recette['Photo']; ?>" alt="<?= $recette['Name']; ?>" class="imgAccueil">
+			</div>
+			<div class="col-lg-8 col-md-6 col-sm-12 text-center" id="nameRecetteDetails">
+				<h2><?= $recette['Name']; ?></h2>
+
+				<?php
+
+                $userSession = new UserSession();
+                $user_Id = $userSession->getUserId();
+
+                $recetteModel = new RecetteModel();
+                $id = $recetteModel->findId($recette['Name']);
+
+                $favorisModel = new FavorisModel();
+                $search = $favorisModel->searchFavoris($user_Id, $id['Id']);      
+                  
+                 ?>
+
+
+
+                 <?php
+
+                 if($search == true):?>
+
+                <button type="button" class="btn pinkBtn"><i class="far fa-heart text-light"></i><a href="" id="favoris" data-favoris="add">AJOUTER CETTE RECETTE EN FAVORIS</a></button>
+
+                <?php elseif ($search == false):?>
+                	
+                <button type="button" class="btn pinkBtn"><i class="far fa-heart text-light"></i><a href="" id="favoris" data-favoris="delete">SUPPRIMER CETTE RECETTE DE MES FAVORIS</a></button>
+
+                <?php 
+
+                endif; ?>
+               
+               
+				
+				<div class=" text-center shadow p-3 mb-5 rounded pinkgrad" id="etapesRecette">
+				<p><?= $recette['Description'] ; ?></p>
+				</div>
+				<div class="col-lg-4 col-md-6 col-sm-12 text-center mx-auto">
+				<div id="recetteName">
+					<h3>Les ingrédients :</h3>
+					<p> <?= $recette['Ingredients'] ; ?></p>
+				</div>
+				</div>
+			<div>
+	</div>
+	</div>
+
+	</div>
+</div>
+
+<script type="text/javascript" src="<?= $wwwUrl ?>/js/layout.js"></script>
+
+
+
+
+
+
+
+
+
+    
+

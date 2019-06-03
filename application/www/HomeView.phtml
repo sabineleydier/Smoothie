@@ -1,0 +1,126 @@
+<link rel="stylesheet" href="<?= $wwwUrl ?>/css/home.css">
+
+<!-- Message de notification -->
+<?php if($flashBag->hasMessages() == true): ?>
+    <aside id="notice" class="notice">
+        <?php foreach($flashBag->fetchMessages() as $message): ?>
+            <p><?= $message ?></p>
+        <?php endforeach ?>
+    </aside>
+<?php endif; ?>
+
+<!-- Liste des produits alimentaires -->
+<table class="generic-table meal-list">
+<div class="pageaccueil">    
+        <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 title Abhaya navicone">
+                    <h1 class="display-4">Fabricant de smoothies artisanaux</h1>        
+                </div>
+                    <div class=" col-md-3 col-sm-6 col-xs-6 nuage">
+                        <img src="<?= $wwwUrl ?>/images/cloud.png" alt="">
+                    <div class="smoothi2 deuxSmoothie">
+                        <img src="<?= $wwwUrl ?>/images/1390e532fc47867cec83821c6df85a7f.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+</header>
+        
+        
+    <div class="container">
+        <article>
+        
+            <div class="jumbotron col-md-12 col-lg-4 bg-transparent" id="smoothMaker">
+                    <div class="title Abhaya text-center">SmoothMaker</div>
+                    <p class="lead text-center">Votre producteur de smoothie artisanal a lyon</p>
+                
+            </div>
+        
+            <div class="row">  
+                <div class="col-md-12 col-lg-5 troisSmoo imgterasse text-center">
+                <img src="<?= $wwwUrl ?>/images/cjoann_pie_slice_of_pie_photography.webp" alt="troisSmoo">
+                </div>
+
+                <div class="col-md-12 col-lg-6">
+                    <div class="title Abhaya">Qui Sommes-nous  <i class="fas fa-question"></i></div>
+                    <div class="paraAccueil">
+                        <br>
+                        <strong>Depuis 2017,</strong> notre établissement, situé en plein coeur du 6ème arrondissement est une véritable <strong>institution pour les lyonnais.</strong><br><br> Tous nos smoothies sont <strong>"fait maison" </strong>et réfléchis par notre Chef Matthias et son équipe, qui ont pris soin de sélectionner les meilleurs produits de saison.<br><br> La carte est amenée à évoluer au fil des saisons pour vous apporter constament de la <strong>nouveauté et de la fraicheur.</strong>
+                    </div>
+                </div>    
+            </div>
+        
+
+        </article>
+
+       <article>
+        <div class="title Abhaya"><i class="fas fa-heart "></i> Nos coups de coeur <i class="fas fa-heart "></i></div>
+
+        <div class="row text-center articlerecette">
+                <?php foreach($loveProducts as $loveProduct): ?>
+            <div id="boxRecette" class="recette col-lg-3 col-md-6 col-sm-12 col-xs-12">
+            <a href="<?= $requestUrl ?>/order/"><img id="imgRecette" src="<?= $wwwUrl ?>/images/<?= $loveProduct['Photo']; ?>" alt="<?= $loveProduct['Name']; ?>" ></a>
+                <p><strong><?= $loveProduct['Name']; ?></strong></p>
+            </div>
+            <?php endforeach; ?>
+        </div>
+
+       </article>
+
+        <article>
+            <div class="row">
+                <div class="col-md-12 col-lg-4 titrePara">
+                    
+                </div>
+            </div>
+
+            <div class="row">  
+                <div class="col-md-12 col-lg-4">
+                    <div class="titreNousTrouver">
+                        
+                        <div class="title Abhaya"><i class="fa far fa-compass"></i><br> Nous trouver</div>
+                        <p>venez vous détendre dans notre salon smooth</p>
+                    </div>
+                    <div class="paraAccueil">
+                        <h3>Accès</h3>
+                        <p>Adresse :<br>52 rue de rivoli</p>
+                        <p><strong>Métro :</strong><br>Hôtel de Ville (lignes 1 et 11)</p>
+                        <p><strong>Parking LOBAU :</strong><br> 700 places,<br>4 rue Lobau</p>
+                        <p><strong>Parking BAUDOYER:</strong><br> 200 places, 6 place Baudoyer</p>
+                    
+                    </div>
+                </div>   
+                <div class="col-md-12 col-lg-8 troisSmoo text-center">
+                
+                    <map>
+
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44538.569300193514!2d4.80001582633176!3d45.75795012465432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f4ea516ae88797%3A0x408ab2ae4bb21f0!2sLyon!5e0!3m2!1sfr!2sfr!4v1551088323351" width="80%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+                    </map>
+                </div> 
+            </div>
+
+        </article>
+                <div class="Découvrez">
+                   <div class="title Abhaya"> Découvrez les DIY smoothie</div>
+                </div>
+        <div class="row">  
+                <div class="col-md-12 col-sm-12 col-lg-6 troisSmoo text-center mx-auto">
+                 <img src="<?= $wwwUrl ?>/images/detox cure smoothie.jpg" alt="">
+                </div> 
+
+                <div class="col-md-12 col-sm-12 col-lg-7 mx-auto">   
+                    <div class=" paraAccueil">
+                        <h3> Réalisez les vous-même!!</h3>
+                        <p><br><strong>Vous aimez nos smoothies? </strong><br>Découvrez nos recettes uniques et originales à reproduire chez vous. </p>
+                        <p>Grâce à notre rubrique recettes, vous pouvez désormais réaliser vous-même vos smoothies préférés, directement à la maison. </p>
+                    </div>
+                </div>        
+        </div>
+
+        </article>
+</div>  
+</table>
+
+<script type="text/javascript" src="<?= $wwwUrl ?>/js/home.js"></script>

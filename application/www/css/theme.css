@@ -1,0 +1,388 @@
+
+
+main{
+    margin: 0 10%;
+}
+
+header{
+	width: 100%;
+	height: 200px;
+	background: linear-gradient(180deg, #FFFFFF 0%, rgba(7, 118, 133, 0.48) 0%, rgba(255, 255, 255, 0.984375) 100%), rgba(0, 163, 255, 0.67);
+}
+
+nav{
+	width: 100%;
+    z-index: 2;
+}
+
+footer{
+	width: 100%;
+	height: 200px;
+	background: linear-gradient(to top, #FFFFFF 0%, rgba(7, 118, 133, 0.48) 0%, rgba(255, 255, 255, 0.984375) 100%), rgba(0, 163, 255, 0.67);
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+
+#heart img{
+    width: 25px;
+}
+
+.row{
+    flex-direction: row;
+}
+
+.column{
+    flex-direction: column;
+}
+
+.close{
+    color: white;
+}
+
+.Abhaya{
+	font-family: 'Abhaya Libre', serif;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+button a{
+    color: white;
+    text-decoration: none;
+}
+
+.secondNav{
+    width: 100%;
+}
+
+.nav-size{
+    font-style: normal;
+    font-weight: 800;
+    font-size: 23px;
+    line-height: 35px;
+}
+
+.btnNav{
+    font-size: 18px;
+    border-radius: 15px;
+    color: white;
+    z-index: 3;
+
+}
+.btnNav:hover{
+    
+    color: white;
+}
+
+.size{
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 35px;
+}
+
+.title{
+    font-style: normal;
+    font-weight: 800;
+    font-size: 50px;
+    line-height: 59px;
+    margin-bottom: 20px;
+}
+
+.nav-item{
+    margin: 20px;
+}
+
+#mail, #msg{
+    padding: 5px;
+    width: 80%;
+    margin: 10px;
+    border : 2px solid #FF8FB6;
+    border-radius: 25px;
+}
+
+#msg{
+    height: 100px;
+}
+
+#notreBar{
+    margin-top: 5%;
+}
+
+#logo{
+	    margin: 20px 0 40px 80px;
+}
+
+
+.textfoot{
+	margin-top: 100px;
+}
+
+.textfoot1{
+	margin-top: -20px;
+}
+
+.hide{
+	display: none;
+}
+
+.imgAccueil{
+    width: 100%;
+    margin-top:20px;
+    margin-left: 5%;
+    border-radius:25px;
+}
+
+.pinkgrad{
+    background: linear-gradient(180deg, #FD5182 0%, #FF8FB6 100%), #FF8FB6;
+    border-radius: 15px;
+}
+
+.pinkBtn{
+    background-color: #FD5182;
+    color: white;
+    border-radius: 25px;
+}
+
+.pink{
+    color :#FD5182;
+}
+
+#imgRecette{
+    width: 100%;
+    border-radius: 25px;
+}
+
+
+
+#recetteName{
+    margin-top: 20px;
+    text-align: center;
+    border : 4px solid #FD5182;
+    box-sizing: border-box;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+#boxRecette{
+    margin: 2% 0;
+}
+
+#nameRecetteDetails{
+    margin-top: 5%;
+}
+
+#etapesRecette{
+    margin: 5%;
+}
+
+ *
+ {
+     box-sizing: border-box;
+ }
+ 
+ li{
+     list-style:none;
+ }
+
+ 
+ .nav-item{
+     font-family: 'Abhaya Libre', serif;
+ }
+ 
+ #pfoot{
+     font-family: 'Abhaya Libre', serif;
+ }
+ 
+ #logo{
+         margin: 20px 0 40px 80px;
+ }
+ 
+ /* PAGE LoginView */
+ .seConnecter{
+     margin-left:auto;
+     margin-right:auto;
+ }
+ .seConnecter h2{
+     text-align:center;
+ }
+ 
+ .textfoot{
+     margin-top: 80px;
+ }
+ 
+ .textfoot1{
+     margin-top: -20px;
+ }
+ 
+ .hide{
+     display: none;
+ }
+ #buttonCreer{
+     margin-top:10%;
+     color:white;
+     background: #FD5182;
+     border-radius: 25px;
+     border: none;
+     box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+     font-weight: bold;
+     line-height: 1.5em;
+     text-decoration: none;
+     transition: background-color 0.25s, box-shadow 0.25s;
+ }
+ .buttonCreer{
+     margin-left:auto;
+     margin-right:auto;
+ }
+ .buttonCreer li{
+     display:flex;
+     flex-direction:row;
+     justify-content: center;
+ }
+ .authentification{
+     text-align:center;
+     margin-left:auto;
+     margin-right:auto;
+ 
+ }
+ .userInfos{
+     margin-top:5%;
+     display:flex;
+     flex-direction:column;
+     justify-content: center;
+     align-items:center;
+ }
+
+ .userInfos ul{
+    padding: 0;
+ }
+
+ .userInfos p{
+     margin-left:auto;
+     margin-right:auto;
+ }
+ .userInfos h2{
+     color:#FD5182;
+     margin-top:5%;
+ }
+ .userInfos ul li label{
+     color:#FD5182;
+ }
+ .userInfos ul li input{
+     border:1px solid #FD5182 !important;
+     border-radius:25px;
+ }
+ .userInfos ul li textarea{
+     border:1px solid #FD5182 !important;
+     border-radius:25px;
+ }
+ .generic-form ul{
+     margin-left:auto;
+     margin-right:auto;
+ }
+ #buttonConnexion{
+     margin-top:10%;
+     color:white;
+     background: #FD5182;
+     border-radius: 25px;
+     border: none;
+     box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+     font-weight: bold;
+     line-height: 1.5em;
+     text-decoration: none;
+     transition: background-color 0.25s, box-shadow 0.25s;
+ }
+ 
+ #photoLogIn{
+     display:block;
+     margin-right:auto;
+     margin-left:auto;
+     width: 80%;
+     margin-top: 250px;
+     margin-bottom:5%;
+ }
+
+ .hidden{
+     display:none;
+ }
+ 
+ 
+ /* PAGE Creer compte */
+ #titreCreer{
+     text-align:center;
+     margin-top:5%;
+     margin-bottom:5%;
+ }
+ .ulButton{
+     padding-left:0 !important;
+ }
+ .titreIdentite{
+     margin:5%;
+     
+     color:#FD5182;
+ }
+ .buttonValider{
+     display:flex;
+     flex-direction :row;
+     justify-content:center;
+     align-items:center;
+ }
+ .commander{
+    width: 40%;
+    margin: auto;
+    border:3px solid rgba(0, 163, 255, 0.67);
+    border-radius: 20px;
+    text-align: center;
+}
+.commander:hover{
+    background: rgba(0, 163, 255, 0.67);
+  
+}
+ 
+#table-order th{
+    text-align: center;
+    border:2px solid rgba(7, 118, 133, 0.48);
+    background:  rgba(7, 118, 133, 0.48);
+    padding: 8px;
+}
+#table-order td{
+    border:2px solid rgba(7, 118, 133, 0.48);
+    text-align: center;
+    padding: 8px;
+}
+
+#imgOrder{
+    margin : 20px 0;
+}
+
+.ulOrder{
+    margin : 20px 0;
+}
+
+button i{
+   color: white!important;
+}
+
+#table-order{
+    margin-bottom: 210px;
+ }
+
+ .user-interface{
+    margin-top: 20px;
+ }
+
+.formStyle{
+    padding : 5px;
+    width: 80%;
+    margin: 10px;
+    border: 2px solid #FF8FB6;
+    border-radius: 25px;
+}

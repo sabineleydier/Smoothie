@@ -1,0 +1,98 @@
+<div class="container pageCreerCompte" >
+
+<div class="row"> 
+	<div class="col-md-12 col-lg-10 mx-auto">
+			<img id="photoLogIn"src="<?= $wwwUrl ?>/images/smoothiepack.png" alt="photoLogIn">
+		</div>
+</div>
+	
+	<div class="row">
+		<div class = "col-12 seConnecter">
+		<h2 id="titreCreer" class="title Abhaya"><i class="fa fa-user"></i> CREATION D'UN COMPTE CLIENT</h2>
+		</div>
+	<div>
+	<div class="row">
+		<div class="col-12 text-center">
+			<p>En devenant membre, vous pouvez commander des smoothies, ajouter nos recettes "maison" à votre liste de recettes favorites, accéder à votre panier, et bien plus encore...!! </p>
+			<p>L'inscription est gratuite, il vous suffit de remplir le formulaire suivant.
+		</div>
+	</div>
+
+	
+	
+
+	<form class="generic-form col-12" action="<?= $requestUrl ?>/user" method="POST">
+
+		<aside class="error-message hidden">
+			<h3><i class="fa fa-warning"></i> Il y a <span id="total-error-count">1</span> erreur(s) dans le formulaire !</h3>
+			<p><?= $errorMessage ?></p>
+		</aside>
+
+		<fieldset class="userInfos">
+
+		<div class="shadow p-3 mb-5 bg-white rounded col-8 mx-auto text-center">
+			<h2 class="titreIdentite"><i class="fa fa-book"></i> Identité et coordonnées</h2>
+			<ul>
+				<li>
+					<label for="lastName">Nom :</label>
+					<input id="lastName" type="text" name="lastName" data-required data-name="Nom" value="<?= $lastName ?>">
+					<!--input id="lastName" type="text" name="lastName" value="<?= $lastName ?>"-->
+				</li>
+				<li>
+					<label for="firstName">Prénom :</label>
+					<input id="firstName" type="text" name="firstName" data-required data-name="Prénom" value="<?= $firstName ?>">
+				</li>
+				
+				<li>
+					<label class="textarea" for="address">Adresse :</label>
+					<textarea id="address" name="address" rows="3"><?= $address ?></textarea>
+				</li>
+				<li>
+					<label for="city">Ville :</label>
+					<input id="city" type="text" name="city" value="<?= $city ?>">
+				</li>
+				<li>
+					<label for="zipCode">Code Postal :</label>
+					<input id="zipCode" class="zip-code" type="text" maxlength="5" name="zipCode" data-name="Code postal" data-type="number" value="<?= $zipCode ?>">
+				</li>
+				
+				<li>
+					<label for="phone">Téléphone :</label>
+					<input id="phone" class="phone" type="text" maxlength="10" name="phone" data-name="Téléphone" data-type="number" value="<?= $phone ?>">
+				</li>
+			</ul>
+		</div>
+
+		<div class="shadow p-3 mb-5 bg-white rounded col-8 mx-auto text-center">
+		
+			<h2 class="titreIdentite text-center"><i class="fa fa-lock"></i> Informations d'authentification</h2>
+			<ul>
+				<li>
+					<label for="email">E-mail :</label>
+					<input id="email" type="text" name="email" data-required data-name="E-mail" value="<?= $email ?>">
+				</li>
+				<li>
+					<label for="password">Mot de passe :</label>
+					<input id="password" type="password" name="password" data-required data-name="Mot de passe" data-length="8">
+				</li>
+			</ul>
+		</div>
+		</fieldset>
+
+		<ul class="ulButton">
+			<li class="buttonValider">
+				<input class="button button-primary " type="submit" value="Créer le compte">
+				<a class="button button-cancel small" href="<?= $requestUrl ?>">Annuler</a>
+			</li>
+		</ul>
+	</form>
+	<div class="row">
+		<div class="col-4 buttonCreer"  >
+			<li>
+				<a class="button button-primary" id="buttonConnexion" href="<?= $requestUrl ?>/user/login">J'ai déjà un compte !!</a>
+			</li>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="<?= $wwwUrl ?>/js/layout.js"></script>
